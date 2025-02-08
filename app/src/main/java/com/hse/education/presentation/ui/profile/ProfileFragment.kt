@@ -7,7 +7,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -26,10 +25,9 @@ import com.hse.education.databinding.FragmentProfileBinding
 import com.hse.education.domain.entity.Interest
 import com.hse.education.domain.entity.User
 import com.hse.education.presentation.viewmodel.ProfileViewModel
-import java.util.Observer
-import java.util.Timer
-import java.util.TimerTask
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
     companion object {
         private const val TAG = "ProfileFragment"
@@ -48,7 +46,7 @@ class ProfileFragment : Fragment() {
 
     private val logoutObserver = androidx.lifecycle.Observer<Boolean> { isProcess ->
         if(isProcess) {
-            viewModelP.loadingAvatar.removeObserver(avatarObserver)
+            viewModelP.loading.removeObserver(avatarObserver)
             viewModelP.user.removeObserver(userObserver)
         }else{
             findNavController().navigate(R.id.action_profile_to_mainAuth)
@@ -104,7 +102,7 @@ class ProfileFragment : Fragment() {
 
 
         // Подписка на статус загрузки
-        viewModelP.loadingAvatar.observe(viewLifecycleOwner,avatarObserver)
+        viewModelP.loading.observe(viewLifecycleOwner,avatarObserver)
     }
 
     private fun initUI() {
@@ -142,13 +140,13 @@ class ProfileFragment : Fragment() {
 
     private fun updateUI(user: User) {
         binding.textViewUsername.text = user.userName
-        binding.textViewUserId.text = user.email
+        binding.textViewUserEmail.text = user.email
         Glide.with(this)
             .load("http://10.0.2.2:8080/user/avatar/${user.globalId}/")
             .circleCrop() // Обрезка в круг (можно убрать, если не нужно)
             .into(binding.imageViewAvatar)
         binding.buttonEditProfile.setOnClickListener{
-            viewModelP.refreshUserData()
+            findNavController().navigate(R.id.action_profile_to_profileEdit)
         }
 
         binding.buttonLogout.setOnClickListener{
@@ -225,7 +223,7 @@ class ProfileFragment : Fragment() {
         viewModelP.logoutFlag.removeObserver(logoutObserver)
         Log.i(TAG,"Logout has observer: ${viewModelP.logoutFlag.hasObservers()}")
         Log.i(TAG,"User has observer: ${viewModelP.user.hasObservers()}")
-        Log.i(TAG,"Avatar has observer: ${viewModelP.loadingAvatar.hasObservers()}")
+        Log.i(TAG,"Avatar has observer: ${viewModelP.loading.hasObservers()}")
     }
 }
 

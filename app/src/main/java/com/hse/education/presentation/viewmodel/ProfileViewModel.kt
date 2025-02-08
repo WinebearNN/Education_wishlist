@@ -22,8 +22,9 @@ class ProfileViewModel @Inject constructor(
         private const val TAG = "ProfileViewModel"
     }
 
-    private val _loadingAvatar = MutableLiveData<Boolean>()
-    val loadingAvatar: LiveData<Boolean> get() = _loadingAvatar
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> get() = _loading
 
     private val _user = MutableLiveData<User>()
     val user: LiveData<User> get() = _user
@@ -41,7 +42,7 @@ class ProfileViewModel @Inject constructor(
         refreshUserData()
     }
 
-    fun refreshUserData() {
+    private fun refreshUserData() {
         viewModelScope.launch {
             runCatching {
                 profileUseCase.refreshUserData()
@@ -79,13 +80,15 @@ class ProfileViewModel @Inject constructor(
 
     fun updateUserData(user: User) {
         viewModelScope.launch {
-            _loadingAvatar.postValue(true)
+            _loading.postValue(true)
             runCatching {
                 profileUseCase.updateUserData(user)
+            }.onSuccess { result->
+                if(result.isSuccess) _user.postValue(user)
             }.onFailure { exception ->
                 Log.e(TAG, "Failed to update user data: $exception")
             }
-            _loadingAvatar.postValue(false)
+            _loading.postValue(false)
         }
     }
 
@@ -102,13 +105,13 @@ class ProfileViewModel @Inject constructor(
                         imageBytes
                     )
                     Log.i(TAG, result.toString())
-                    _loadingAvatar.postValue(result.isSuccess)
+                    _loading.postValue(result.isSuccess)
                 } else {
-                    _loadingAvatar.postValue(false)
+                    _loading.postValue(false)
                 }
             } catch (e: Exception) {
                 Log.e("ProfileViewModel", "Error uploading image: ${e.message}")
-                _loadingAvatar.postValue(false)
+                _loading.postValue(false)
             }
         }
     }

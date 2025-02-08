@@ -38,10 +38,9 @@ class RemoteDataSourceUser @Inject constructor(
     suspend fun updateUserData(user: User): Result<Unit> = withContext(Dispatchers.IO) {
         runCatching {
             val response = apiServiceUser.updateUserData(user)
+            Log.d(TAG,response.message)
             if (response.success) Unit
-            else {
-                throw Exception("Failed to update user: ${response.message}")
-            }
+            else throw Exception("Failed to update user: ${response.message}")
         }.onSuccess {
             Log.d(TAG, "User updated successfully")
         }.onFailure { e ->

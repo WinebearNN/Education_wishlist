@@ -61,5 +61,17 @@
         <action
             android:id="@+id/action_profile_to_mainAuth"
             app:destination="@id/mainAuth" />
+        <action
+            android:id="@+id/action_profile_to_profileEdit"
+            app:destination="@id/profileEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEdit"
+        android:name="com.hse.education.presentation.ui.profile.ProfileEditFragment"
+        android:label="profile_edit"
+        tools:layout="@layout/fragment_profile_edit" >
+        <action
+            android:id="@+id/action_profileEdit_to_profile"
+            app:destination="@id/profile" />
     </fragment>
 </navigation>
