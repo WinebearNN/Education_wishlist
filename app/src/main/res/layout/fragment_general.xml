@@ -1,0 +1,174 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="16dp"-->
+<!--        android:background="@drawable/rounded_background">-->
+
+<!--        &lt;!&ndash; Заголовок &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tvHeader"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Создать объявление"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textColor="@color/primary"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="24dp" />-->
+
+<!--        &lt;!&ndash; Название объявления &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:background="@drawable/input_background"-->
+<!--            android:padding="12dp"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:src="@drawable/ic_title"-->
+<!--                android:tint="@color/gray"-->
+<!--                android:layout_marginEnd="8dp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/etTitle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Название"-->
+<!--                android:background="@null"-->
+<!--                android:padding="0dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:hintTextColor="@color/gray" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Цена &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:background="@drawable/input_background"-->
+<!--            android:padding="12dp"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:src="@drawable/ic_price"-->
+<!--                android:tint="@color/gray"-->
+<!--                android:layout_marginEnd="8dp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/etPrice"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Цена"-->
+<!--                android:background="@null"-->
+<!--                android:padding="0dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:hintTextColor="@color/gray"-->
+<!--                android:inputType="numberDecimal" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Местоположение &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:background="@drawable/input_background"-->
+<!--            android:padding="12dp"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:src="@drawable/ic_location"-->
+<!--                android:tint="@color/gray"-->
+<!--                android:layout_marginEnd="8dp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/etLocation"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Местоположение"-->
+<!--                android:background="@null"-->
+<!--                android:padding="0dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:hintTextColor="@color/gray" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Описание &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Описание"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@color/primary"-->
+<!--            android:layout_marginBottom="8dp" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/etDescription"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/textarea_background"-->
+<!--            android:hint="Введите описание"-->
+<!--            android:padding="12dp"-->
+<!--            android:minLines="4"-->
+<!--            android:gravity="top"-->
+<!--            android:hintTextColor="@color/gray"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginBottom="16dp" />-->
+
+<!--        &lt;!&ndash; Фотографии &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Добавить фотографии"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="@color/primary"-->
+<!--            android:layout_marginBottom="8dp" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btnUploadImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Загрузить фото"-->
+<!--            android:backgroundTint="@color/primary"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginBottom="16dp" />-->
+
+<!--        &lt;!&ndash; Превью изображений &ndash;&gt;-->
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/photoPreviewContainer">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="4dp">-->
+<!--                &lt;!&ndash; Здесь будут превью изображений &ndash;&gt;-->
+<!--            </LinearLayout>-->
+<!--        </HorizontalScrollView>-->
+
+<!--        &lt;!&ndash; Кнопка Опубликовать &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/btnSave"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Опубликовать"-->
+<!--            android:backgroundTint="@color/primary"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginTop="24dp" />-->
+
+<!--    </LinearLayout>-->
+</ScrollView>

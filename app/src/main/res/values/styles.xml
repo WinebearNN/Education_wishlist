@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">24dp</item> <!-- Размер иконок -->
+        <item name="itemTextAppearanceActive">@style/TextAppearance.AppCompat.Small
+        </item> <!-- Размер активного текста -->
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.AppCompat.Small
+        </item> <!-- Размер неактивного текста -->
+    </style>
+
+    <style name="Theme.BuildMart.NoStatusBar" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

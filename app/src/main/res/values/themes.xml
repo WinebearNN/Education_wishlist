@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Education.Mat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme -->
+<!--        <item name="colorPrimary">@color/primaryColor</item>-->
+<!--        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>-->
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+<!--        <item name="colorSecondary">@color/secondaryColor</item>-->
+    </style>
+
+    <style name="Theme.Education" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

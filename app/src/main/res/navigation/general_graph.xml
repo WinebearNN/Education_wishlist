@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/general_graph"
+    app:startDestination="@id/mainAuth">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.hse.education.presentation.ui.authorization.LoginFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_login_to_general"
+            app:destination="@id/general" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainAuth"
+        android:name="com.hse.education.presentation.ui.authorization.MainAuthFragment"
+        android:label="main_auth"
+        tools:layout="@layout/fragment_main_auth" >
+        <action
+            android:id="@+id/action_mainAuth_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_mainAuth_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_mainAuth_to_general"
+            app:destination="@id/general" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.hse.education.presentation.ui.authorization.RegistrationFragment"
+        android:label="registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_registration_to_general"
+            app:destination="@id/general" />
+    </fragment>
+    <fragment
+        android:id="@+id/general"
+        android:name="com.hse.education.presentation.ui.general.GeneralFragment"
+        android:label="general" />
+    <fragment
+        android:id="@+id/chat"
+        android:name="com.hse.education.presentation.ui.chat.ChatFragment"
+        android:label="chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.hse.education.presentation.ui.profile.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_mainAuth"
+            app:destination="@id/mainAuth" />
+    </fragment>
+</navigation>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/white" />
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black" />
+    <corners android:radius="4dp" /> <!-- Закругление углов (необязательно) -->
+</shape>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    &lt;!&ndash; Фон для четырехугольника &ndash;&gt;-->
+<!--    <solid android:color="#FFFFFF"/> &lt;!&ndash; Цвет фона (можете изменить на любой) &ndash;&gt;-->
+<!--    <stroke android:color="@color/black"-->
+<!--        android:width="1dp"/>-->
+<!--    &lt;!&ndash; Радиус закругления углов &ndash;&gt;-->
+<!--    <corners-->
+<!--        android:radius="5dp"/>-->
+
+
+<!--</shape>-->
+
+
+
+
+    <!--    &lt;!&ndash; Опционально: рамка для четырехугольника &ndash;&gt;-->
+    <!--    <stroke-->
+    <!--        android:width="2dp"-->
+    <!--        android:color="#FF3700B3"/> &lt;!&ndash; Цвет и ширина рамки &ndash;&gt;-->
