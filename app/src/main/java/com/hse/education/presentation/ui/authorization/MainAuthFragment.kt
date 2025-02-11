@@ -57,7 +57,7 @@ class MainAuthFragment : Fragment() {
                 Toast.makeText(requireContext(), "Hello, ${user.userName}", Toast.LENGTH_LONG).show()
                 Log.i("MainAuth", "Authentication successful: ${user.userName}")
                 Navigation.findNavController(view)
-                    .navigate(R.id.action_mainAuth_to_general)
+                    .navigate(R.id.action_mainAuth_to_profile)
 
             }.onFailure { exception ->
                 Log.e("MainActivity", exception.message.toString())

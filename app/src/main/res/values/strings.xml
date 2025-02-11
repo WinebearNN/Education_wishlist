@@ -2,7 +2,7 @@
     <string name="app_name">Education</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="see_all_interests">Посмотреть все интересы</string>
+    <string name="see_all_interests">Настроить все интересы</string>
     <string name="your_interests">Ваши интересы</string>
     <string name="volleyball">Волейбол</string>
     <string name="general">Главная</string>

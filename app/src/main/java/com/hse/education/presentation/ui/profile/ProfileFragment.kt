@@ -24,6 +24,7 @@ import com.hse.education.R
 import com.hse.education.databinding.FragmentProfileBinding
 import com.hse.education.domain.entity.Interest
 import com.hse.education.domain.entity.User
+import com.hse.education.presentation.adapter.InterestAdapter
 import com.hse.education.presentation.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,7 +47,7 @@ class ProfileFragment : Fragment() {
 
     private val logoutObserver = androidx.lifecycle.Observer<Boolean> { isProcess ->
         if(isProcess) {
-            viewModelP.loading.removeObserver(avatarObserver)
+            viewModelP.loadingAvatar.removeObserver(avatarObserver)
             viewModelP.user.removeObserver(userObserver)
         }else{
             findNavController().navigate(R.id.action_profile_to_mainAuth)
@@ -102,13 +103,16 @@ class ProfileFragment : Fragment() {
 
 
         // Подписка на статус загрузки
-        viewModelP.loading.observe(viewLifecycleOwner,avatarObserver)
+        viewModelP.loadingAvatar.observe(viewLifecycleOwner,avatarObserver)
     }
 
     private fun initUI() {
         binding.imageViewAvatar.setOnClickListener {
             checkPermissionsAndOpenGallery() // Теперь метод вызывается при клике
         }
+
+
+
     }
 
     private fun openGallery() {
@@ -147,6 +151,10 @@ class ProfileFragment : Fragment() {
             .into(binding.imageViewAvatar)
         binding.buttonEditProfile.setOnClickListener{
             findNavController().navigate(R.id.action_profile_to_profileEdit)
+        }
+
+        binding.buttonAllInterests.setOnClickListener{
+            findNavController().navigate(R.id.action_profile_to_profileInterest)
         }
 
         binding.buttonLogout.setOnClickListener{

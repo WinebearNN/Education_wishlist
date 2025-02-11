@@ -82,7 +82,7 @@ class RegistrationFragment : Fragment() {
                     .show()
                 Log.i(TAG, "Registration successful")
                 Navigation.findNavController(binding.root).navigate(
-                    R.id.action_registration_to_general
+                    R.id.action_registration_to_profile
                 )
             }.onFailure { exception ->
                 Log.e(TAG, exception.message.toString());

@@ -32,10 +32,12 @@ class ProfileViewModel @Inject constructor(
     private val _logoutFlag = MutableLiveData<Boolean>()
     val logoutFlag:LiveData<Boolean> get()=_logoutFlag
 
+    private val _loadingAvatar = MutableLiveData<Boolean>()
+    val loadingAvatar: LiveData<Boolean> get() = _loadingAvatar
 
 
-    private val _linkFlag = MutableLiveData<Boolean>()
-    val linkFlag: LiveData<Boolean> get() = _linkFlag
+//    private val _linkFlag = MutableLiveData<Boolean>()
+//    val linkFlag: LiveData<Boolean> get() = _linkFlag
 
     init {
         loadLocalUserData()
@@ -105,13 +107,13 @@ class ProfileViewModel @Inject constructor(
                         imageBytes
                     )
                     Log.i(TAG, result.toString())
-                    _loading.postValue(result.isSuccess)
+                    _loadingAvatar.postValue(result.isSuccess)
                 } else {
-                    _loading.postValue(false)
+                    _loadingAvatar.postValue(false)
                 }
             } catch (e: Exception) {
                 Log.e("ProfileViewModel", "Error uploading image: ${e.message}")
-                _loading.postValue(false)
+                _loadingAvatar.postValue(false)
             }
         }
     }

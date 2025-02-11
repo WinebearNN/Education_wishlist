@@ -79,7 +79,7 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Sign in Successful", Toast.LENGTH_SHORT).show()
 
                 Navigation.findNavController(binding.root).navigate(
-                    R.id.action_login_to_general
+                    R.id.action_login_to_profile
                 )
             }.onFailure { exception ->
                 Log.e(TAG, exception.message.toString())

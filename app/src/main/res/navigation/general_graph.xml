@@ -14,8 +14,8 @@
             android:id="@+id/action_login_to_registration"
             app:destination="@id/registration" />
         <action
-            android:id="@+id/action_login_to_general"
-            app:destination="@id/general" />
+            android:id="@+id/action_login_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/mainAuth"
@@ -29,8 +29,8 @@
             android:id="@+id/action_mainAuth_to_login"
             app:destination="@id/login" />
         <action
-            android:id="@+id/action_mainAuth_to_general"
-            app:destination="@id/general" />
+            android:id="@+id/action_mainAuth_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/registration"
@@ -41,8 +41,8 @@
             android:id="@+id/action_registration_to_login"
             app:destination="@id/login" />
         <action
-            android:id="@+id/action_registration_to_general"
-            app:destination="@id/general" />
+            android:id="@+id/action_registration_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/general"
@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_profile_to_profileEdit"
             app:destination="@id/profileEdit" />
+        <action
+            android:id="@+id/action_profile_to_profileInterest"
+            app:destination="@id/profileInterest" />
     </fragment>
     <fragment
         android:id="@+id/profileEdit"
@@ -72,6 +75,15 @@
         tools:layout="@layout/fragment_profile_edit" >
         <action
             android:id="@+id/action_profileEdit_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileInterest"
+        android:name="com.hse.education.presentation.ui.profile.ProfileInterestFragment"
+        android:label="profile_interest"
+        tools:layout="@layout/fragment_profile_interest" >
+        <action
+            android:id="@+id/action_profileInterest_to_profile"
             app:destination="@id/profile" />
     </fragment>
 </navigation>
